@@ -1,0 +1,566 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+
+
+.formContainer {
+    background-color: #FCF5EB;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formWrapper {
+        background-color: #504e7a;
+        color: white;
+        padding: 30px 60px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        
+
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+
+        }
+
+        .title {
+            color: white;
+            font-size: small;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            input {
+                padding: 15px;
+                border: none;
+                border-bottom: 1px solid #6dd19c;
+
+                &::placeholder {
+                    color: rgb(175, 175, 175);
+                }
+            }
+
+            button {
+                background-color: #6dd19c;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                border-radius: 4rem;
+                cursor: pointer;
+
+            }
+
+            button:hover {
+                background-color: #0af278;
+                
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #3e3c61;
+                font-size: 16px;
+                cursor: pointer;
+                color: white;
+
+                img {
+                    width: 32px;
+                }
+
+            }
+        }
+
+        p {
+            color: white;
+            font-size: 12px;
+            margin: 10px;
+           .formlink{
+            color: #0af278;
+            font-size: 14px;
+            padding-left: 1rem;
+            font-weight: 600;
+
+           }
+           .formlogin{
+            color: #0af278;
+            font-size: 14px;
+            padding-left: 1rem;
+            font-weight: 600;
+
+           }
+
+        }
+    }
+
+}
+
+
+
+// ------------components style -----------//
+
+.home {
+    background-color: #FCF5EB;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .container {
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 70%;
+        height: 90%;
+        display: flex;
+        overflow: hidden;
+        border-bottom: 10px solid #6dd19c;
+        border-left: 10px solid #6dd19c;
+
+        @include tablet {
+            width: 90%;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #3e3c61;
+            position: relative;
+            overflow: scroll;
+
+            button {
+                position: absolute;
+                right: 1px;
+                border-radius: 10px;
+                border: .1em solid #ddddf7;
+                background-color: #3e3c61;
+                width: 6vw;
+                height: 5vh;
+                margin: 0 10px;
+                color: #ddddf7;
+                font-weight: bold;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #ddddf7;
+                    color: #2f2d52;
+
+                }
+
+
+            }
+
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                background-color: #2f2d52;
+                height: 50px;
+                padding: 10px;
+                justify-content: space-between;
+                color: #ddddf7;
+
+                .logo {
+                    font-weight: bold;
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+
+                .user {
+                    display: flex;
+                    gap: 10px;
+
+                    .username {
+                        margin-right: 10px;
+                        font-size: larger;
+                    }
+
+                    // .more {
+                    //     display: none;
+                    //   }
+                    //    &.show {
+                    //     .more {
+                    //       display: inline-block;
+                    //     }
+                    //   }
+
+
+                    img {
+                        background-color: #ddddf7;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+
+                    button {
+                        // display: none;
+                        background-color: #5d5b8d;
+                        color: white;
+                        border-radius: 20px;
+                        position: absolute;
+                        margin-top: 1rem;
+                        margin-right: 2rem;
+                        
+        
+                        font-size: small;
+                        border: none;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #ddddf7;
+                            color: #2f2d52;
+                            // transform: scale(1.1);
+                        }
+
+                    
+
+                    }
+
+                    .threeDot {
+                        position: absolute;
+                        right: 0px;
+                        width: 2.5vmax;
+                        height: 2.1vmax;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #504e7a;
+                            border-radius: 45%;
+                        }
+                    }
+                    
+
+
+                }
+                
+
+
+
+
+            }
+            
+
+            .search {
+                border-bottom: 1px solid gray;
+
+                .searchForm {
+                    padding: 10px;
+                    
+
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+
+                        &::placeholder {
+                            color: lightgray;
+                        }
+                    }
+                }
+            }
+
+            .userChat {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                cursor: pointer;
+                
+
+                &:hover {
+                    background-color: #2f2d52;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                   
+                }
+
+                .userChatInfo {
+                    
+                    span {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+                
+            }
+        }
+        .userChat {
+            // Your existing styles for the userChat item
+            // Add additional styles for online and offline users
+            position: relative;
+          
+            &::after {
+              content: "";
+              position: absolute;
+              top: 40%;
+              right: 300px;
+              transform: translateY(-50%);
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+            }
+          
+            &.online::after {
+              background-color: green; // Customize the online indicator color
+            }
+          
+            &.offline::after {
+              background-color: red; // Customize the offline indicator color
+            }
+          }
+
+
+        .chat {
+            flex: 2;
+
+
+            .chatInfo {
+                height: 50px;
+                background-color: #5d5b8d;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                color: lightgray;
+
+            }
+
+            .chatIcons {
+
+                display: flex;
+                gap: 10px;
+
+                img {
+                    height: 24px;
+                    cursor: pointer;
+
+                }
+
+
+            }
+
+
+
+
+
+
+            .messages {
+                background-color: #ddddf7;
+                padding: 10px;
+                height: calc(100% - 160px);
+                overflow: scroll;
+
+                .message {
+                    display: flex;
+                    gap: 20px;
+                    margin-bottom: 20px;
+
+                    .messageInfo {
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-weight: 300;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                          
+                        }
+
+                    }
+
+                    .messageContent {
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p {
+                            background-color: white;
+                            padding: 10px 20px;
+                            border-radius: 0px 10px 10px 10px;
+                        }
+
+                        img {
+
+                            width: 35%;
+
+                        }
+
+                        button {
+                            display: block;
+                            border: none;
+                            background: none;
+                            width: 10vw;
+                            height: 5vh;
+                            margin-top: -1em;
+                            margin-right: -4em;
+                            cursor: pointer;
+
+
+                        }
+                    }
+
+                    &.owner {
+                        flex-direction: row-reverse;
+
+                        .messageContent {
+                            align-items: flex-end;
+
+                            p {
+                                background-color: #8da4f1;
+                                color: white;
+                                border-radius: 10px 0px 10px 10px;
+                                max-width: max-content;
+                                
+                            
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .input {
+                height: 50px;
+                background-color: white;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    color: #2f2d52;
+                    font-size: 18px;
+                    display: flex;
+                    flex: wrap;
+
+                    &::placeholder {
+                        color: lightgray;
+                    }
+                }
+
+                .send {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        height: 24px;
+                        cursor: pointer;
+
+                        &:hover {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+
+
+                    button {
+                        border: none;
+                        background: none;
+                        color: #4e74f1;
+                        cursor: pointer;
+
+
+                    }
+
+                    .sendbtn {
+                        width: 2vmax;
+                        height: 2vmax;
+                        margin-right: .2em;
+                        background-color: none;
+                        padding-left: 12em;
+
+
+                        &:hover {
+                            height: 2.3vmax;
+                            width: 2.3vmax;
+
+                        }
+                    }
+
+                    .shareFile {
+                        right: 17em;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        position: absolute;
+
+
+
+                    }
+
+
+
+                }
+
+
+            }
+        }
+    }
+}
+
+
+.online {
+    width : 20px;
+    height: 20px;
+    border: 1px solid white;
+}
+
+.offline {
+    width : 20px;
+    height: 20px;
+    border: 1px solid red;
+}
+// ================logout======
